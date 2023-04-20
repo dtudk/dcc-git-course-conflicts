@@ -39,12 +39,11 @@ Using `git diff` is an important command when mastering ones development
 process.
 
 | `git diff <>` | Description |
--------------------------------
-| <nothing> | between staged and unstaged changes|
-| `--staged` | between `HEAD` and staged changes |
-| `<1>..<2>` | a patch that can be applied to `<1>` to be equivalent to `<2>` |
-| `<1>...<2>` | what has been added to `<2>` since `<1>` and `<2>` had a common ancestor |
-----------------------------------------------------------------------------------
+|---------------|-------------|
+| <nothing>     | between staged and unstaged changes|
+| `--staged`    | between `HEAD` and staged changes |
+| `<1>..<2>`    | a patch that can be applied to `<1>` to be equivalent to `<2>` |
+| `<1>...<2>`   | what has been added to `<2>` since `<1>` and `<2>` had a common ancestor |
 
 
 The difference of the last two are shown below in 4 examples.
