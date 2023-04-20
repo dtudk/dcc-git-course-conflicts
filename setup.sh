@@ -52,7 +52,7 @@ if [ ! -d $dir ]; then
 	# 2: we move topic to main2
 	git branch main2 topic
 	# 3: we move main~1 into main3
-	git branch main3 main
+	git branch main3 main~1
 	git checkout main
     ) > /dev/null 2>/dev/null
     echo "Done setting up the fake remote repository"
