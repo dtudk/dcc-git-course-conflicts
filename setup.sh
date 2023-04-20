@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pwd=$(pwd)
+
 # We now have these branches:
 #                     A topic
 #                    /
@@ -39,17 +41,17 @@ case $1 in
 esac
 
 # Create a new clone of this repo
-rem=$(git remote get-url origin)
 dir=$(pwd)/fake_remote
 if [ ! -d $dir ]; then
     # initialize the directory
     # as a copy of this one
     git init $dir
     cd $dir
-    git remote add origin $dir
+    git remote add origin $pwd
     git fetch origin
-    git checkout -t origin/main
-    git checkout -t origin/topic
+    git checkout -b main origin/main
+    git checkout -b topic origin/topic
+    cd ..
     (
 	cd $dir
 	git checkout topic
