@@ -41,7 +41,7 @@ case $1 in
 esac
 
 # Create a new clone of this repo
-dir=$(pwd)/fake_remote
+dir=$(pwd)/.fake_remote
 if [ ! -d $dir ]; then
     # initialize the directory
     # as a copy of this one
