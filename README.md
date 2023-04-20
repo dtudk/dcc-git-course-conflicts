@@ -119,8 +119,9 @@ The difference of the last two are shown below in 4 examples.
 
 ## Tutorial 1
 
-Execute `sh setup.sh 1` from the commandline (requires BASH/Unix) and read output and the
-following to understand the situation.
+Execute `sh setup.sh 1` from the commandline (requires BASH/Unix) and follow instructions
+from the output.  
+The following elements describe the situation in more detail.
 
 In tutorial 1 we will examine what happens when you try to `git pull` a remote branch
 which has diverged from your own commits.
@@ -210,8 +211,9 @@ would be the same. Thus meaning that you would never be able to push from this b
 
 ## Tutorial 2
 
-Execute `sh setup.sh 2` from the commandline (requires BASH/Unix) and read output and the
-following to understand the situation.
+Execute `sh setup.sh 2` from the commandline (requires BASH/Unix) and follow instructions
+from the output.  
+The following elements describe the situation in more detail.
 
 This is the same scenario as in 1, but you were trying to do a `push` (instead of `pull`) to the remote.
 The resolutions are the same as in Tutorial 1, but in Resolution 3, replace `host/main1` with `host/main2`.
@@ -222,5 +224,7 @@ Any resolution can often done by aligning commits (if merge is not an option).
 
 ## Tutorial 3
 
-Execute `sh setup.sh 3` from the commandline (requires BASH/Unix) and read output and the
-following to understand the situation.
+Execute `sh setup.sh 3` from the commandline (requires BASH/Unix) and follow instructions
+from the output.
+
+
