@@ -158,29 +158,11 @@ So we can do:
 git diff HEAD~1 > our_commit.patch
 git reset --hard HEAD~1
 git pull host
-# <manually go through our_commit.patch and add the content
-# You can try
-#  patch -p1 < out_commit.patch
-# but it will fail since it affects the same lines as was pulled from host.
-# So manual labor is necessary.
-# Once completed, do:
+patch -p1 < out_commit.patch
 git commit -am "[main]: updated source_2"
 ```
 
-
-### Resolution 2 -- manual rebase, patch-handlings
-
-This procedure is equivalent to the above, but takes advantage of internal `git`
-commands:
-```shell
-git format-patch HEAD~1
-git reset --hard HEAD~1
-git pull host
-git am .
-```
-
-
-### Resolution 3 -- direct rebase
+### Resolution 2 -- direct rebase
 
 A direct rebase will do the above commands in a *smart* way by letting you
 change things if conflicts happen. Its use is somewhat magical and one should carefully
@@ -201,12 +183,13 @@ git rebase host/main1
 and simply do what it says.
 
 
-### Resolution 4 -- merge
+### Resolution 3 -- merge
 
 In this case a merge will not be applicable since the branches are *meant* to be coherent (i.e. every
-commit needs to be 1-1).  
+commit needs to be 1-1). In `git` words this is called *being able to fast-forward*.  
 A merge would result in the local branch having a different history from the remote, although the content
-would be the same. Thus meaning that you would never be able to push from this branch.
+would be the same. Thus meaning that you would never be able to push from your local branch to the remote
+branch.
 
 
 ## Tutorial 2
@@ -216,7 +199,7 @@ from the output.
 The following elements describe the situation in more detail.
 
 This is the same scenario as in 1, but you were trying to do a `push` (instead of `pull`) to the remote.
-The resolutions are the same as in Tutorial 1, but in Resolution 3, replace `host/main1` with `host/main2`.
+The resolutions are the same as in Tutorial 1, but in Resolution 2, replace `host/main1` with `host/main2`.
 
 One should appreciate that the resolution is often the same procedure, since it all boils down to *differing commits*.
 Any resolution can often done by aligning commits (if merge is not an option).  
