@@ -35,7 +35,7 @@ This branch has 1 commit that the [main] branch does not have.
 
 ### Difference using `git diff`
 
-Using `git diff` is an important command when mastering ones development
+Using `git diff` is an important command when mastering a development
 process.
 
 | `git diff <>` | Description |
