@@ -42,8 +42,14 @@ esac
 rem=$(git remote get-url origin)
 dir=$(pwd)/fake_remote
 if [ ! -d $dir ]; then
-    # just create a clone
-    git clone $rem $dir
+    # initialize the directory
+    # as a copy of this one
+    git init $dir
+    cd $dir
+    git remote add origin $dir
+    git fetch origin
+    git checkout -t origin/main
+    git checkout -t origin/topic
     (
 	cd $dir
 	git checkout topic
